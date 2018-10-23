@@ -1,7 +1,6 @@
 %up load picture
-```
 picColor = imread('pic.jpg');
-```
+
 %change to black&white color
 pic = rgb2gray(picColor);
 
