@@ -1,6 +1,6 @@
 # Point Operation
 
-Point operation is about modification of the value without change size, geometry and structure.
+Point operation is modification of the pixle value without changing of size, geometry and structure.
 
 ## Overview
 
