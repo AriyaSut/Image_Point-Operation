@@ -36,13 +36,25 @@ for u=1:pix1
      end
 end
 
+    %histogram
+    hisAca = zeros(1,256);
+ for u=1:pix1
+     for v=1:pix2
+         count = aca(u,v);
+         if count==255
+             hisAca(256)=hisAca(256)+1;             
+         else
+             hisAca(count+1)=hisAca(count+1)+1;
+         end
+     end
+ end
 
 %% Modified automatic contrast
 q = 0.005;
 haed = 0;
 tail = 0;
 
-    %fiind new low and high
+    %find new low and high
 for i=1:256
     haed = haed+pdfPic(i);
     if haed>=q 
@@ -66,6 +78,7 @@ for i=1:256
     end
 end
 
+    %Calculate new pixel value
 for u=1:pix1
      for v=1:pix2
          if pic(u,v)<=low2
@@ -78,12 +91,26 @@ for u=1:pix1
      end
 end
 
+    %histogram
+    hisMac = zeros(1,256);
+ for u=1:pix1
+     for v=1:pix2
+         count = mac(u,v);
+         if count==255
+             hisMac(256)=hisMac(256)+1;             
+         else
+             hisMac(count+1)=hisMac(count+1)+1;
+         end
+     end
+ end
+
 figure;
-imshow(pic, 'InitialMagnification', 'fit')
-figure;
-imshow(aca, 'InitialMagnification', 'fit')
-figure;
-imshow(mac, 'InitialMagnification', 'fit')
+subplot(3,2,1); imshow(pic, 'InitialMagnification', 'fit'); title('Picture')
+subplot(3,2,2); plot(hisPic); axis([0 256 0 inf]); title('Histogram')
+subplot(3,2,3); imshow(aca, 'InitialMagnification', 'fit');
+subplot(3,2,4); plot(hisAca); axis([0 256 0 inf]);
+subplot(3,2,5); imshow(mac, 'InitialMagnification', 'fit');
+subplot(3,2,6); plot(hisMac); axis([0 256 0 inf]);
 
 
 
