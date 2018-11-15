@@ -12,6 +12,3 @@ Point operation is modification of the pixle value without changing of size, geo
 * Histogram Speciﬁcation
 * Gamma Correction 
 
-```
-Give examples
-```
