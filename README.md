@@ -12,4 +12,4 @@ Point operation is modification of the pixle value without changing of size, geo
 * Histogram Speciﬁcation
 * Gamma Correction 
 
-You can find more information in PDF file.
+**You can find more information in PDF file.
